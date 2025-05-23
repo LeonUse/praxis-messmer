@@ -1,6 +1,5 @@
 name: Deploy to GitHub Pages
 
-# Trigger: bei jedem Push auf main
 on:
   push:
     branches:
@@ -11,32 +10,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) Code auschecken
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2) Node.js einrichten
-      - name: Setup Node.js
+      - name: Setup Node.js and pnpm cache
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
+          cache: 'pnpm'
 
-      # 3) Abhängigkeiten installieren
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.10.0     # oder Deine pnpm-Version
 
-      # 4) Produktions-Build erzeugen
+      - name: Install dependencies with pnpm
+        run: pnpm install
+
       - name: Build production bundle
-        run: npm run build
+        run: pnpm run build
 
-      # 5) Deploy via peaceiris/actions-gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-          # Optional: Git-User-Daten
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
