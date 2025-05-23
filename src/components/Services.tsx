@@ -42,9 +42,9 @@ const services = [
   },
   {
     key: 'bioresonanz',
-    title: 'Bioresonanz',
+    title: 'Bio',
     icon: faHeartbeat,
-    description: `Die Bioresonanztherapie analysiert und harmonisiert energetische Frequenzen Ihres Körpers. Unterstützend bei Allergien, Hautproblemen oder zur allgemeinen Energiebalance.`
+    description: `Die Biotherapie analysiert und harmonisiert energetische Frequenzen Ihres Körpers. Unterstützend bei Allergien, Hautproblemen oder zur allgemeinen Energiebalance.`
   },
   {
     key: 'labordiagnostik',
