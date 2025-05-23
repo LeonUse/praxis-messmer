@@ -19,63 +19,69 @@ export default function HeaderBar() {
   // Styles für Desktop vs. Mobile Menu
   const desktopLinkStyle = { color: '#fff', fontWeight: 'bold' };
   const mobileLinkStyle = { color: '#000' };
-
-  // Menü-Items: Home scrollt ganz nach oben, Styles je nach Anzeige
-  const menuItems = [
-    {
-      key: 'home',
-      label: (
-        <span
-          onClick={() => scroll.scrollToTop({ duration: 500 })}
-          style={screens.md ? desktopLinkStyle : mobileLinkStyle}
-        >
-          Home
-        </span>
-      )
-    },
-    {
-      key: 'services',
-      label: (
-        <span
-          onClick={() => {
-            const el = document.getElementById('services');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }}
-          style={screens.md ? desktopLinkStyle : mobileLinkStyle}
-        >
-          Leistungen
-        </span>
-      )
-    },
-    {
-      key: 'testimonials',
-      label: (
-        <span
-          onClick={() => {
-            const el = document.getElementById('testimonials');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }}
-          style={screens.md ? desktopLinkStyle : mobileLinkStyle}
-        >
-          Erfahrungen
-        </span>
-      )
-    },
-    {
-      key: 'contact',
-      label: (
-        <span
-          onClick={() => {
-            const el = document.getElementById('contact');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }}
-          style={screens.md ? desktopLinkStyle : mobileLinkStyle}
-        >
-          Kontakt
-        </span>
-      )
+  
+  const scrollToElementWithOffset = (id: string, offset: number = -80) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.pageYOffset + offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      setTimeout(() => {
+        window.history.replaceState(null, '', window.location.pathname);
+      }, 500);
     }
-  ];
+  };
+
+  const menuItems = [
+  {
+    key: 'home',
+    label: (
+      <span
+        onClick={() => {
+          scroll.scrollToTop({ duration: 500 });
+          setTimeout(() => {
+            window.history.replaceState(null, '', window.location.pathname);
+          }, 500);
+        }}
+        style={screens.md ? desktopLinkStyle : mobileLinkStyle}
+      >
+        Home
+      </span>
+    )
+  },
+  {
+    key: 'services',
+    label: (
+      <span
+        onClick={() => scrollToElementWithOffset('services')}
+        style={screens.md ? desktopLinkStyle : mobileLinkStyle}
+      >
+        Leistungen
+      </span>
+    )
+  },
+  {
+    key: 'testimonials',
+    label: (
+      <span
+        onClick={() => scrollToElementWithOffset('testimonials')}
+        style={screens.md ? desktopLinkStyle : mobileLinkStyle}
+      >
+        Erfahrungen
+      </span>
+    )
+  },
+  {
+    key: 'contact',
+    label: (
+      <span
+        onClick={() => scrollToElementWithOffset('contact')}
+        style={screens.md ? desktopLinkStyle : mobileLinkStyle}
+      >
+        Kontakt
+      </span>
+    )
+  }
+];
 
   return (
     <Header

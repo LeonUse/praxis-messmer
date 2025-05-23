@@ -91,8 +91,8 @@ export default function Services() {
   const service = services.find(s => s.key === selectedService);
 
   return (
-    <section id="services" style={{ marginBottom: 80, textAlign: 'center' }}>
-      <Title level={2} style={{ marginBottom: 40 }}>Leistungen</Title>
+    <section  style={{ marginBottom: 80, textAlign: 'center' }}>
+      <Title id="services" level={2} style={{ marginBottom: 40 }}>Leistungen</Title>
       <Row gutter={[24, 24]} justify="center">
         {services.map(s => (
           <Col
