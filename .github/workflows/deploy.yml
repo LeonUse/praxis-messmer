@@ -8,28 +8,41 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
+      # 1) Code auschecken
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js and pnpm cache
+      # 2) Node.js einrichten (Corepack ist inklusive)
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'pnpm'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+      # 3) Corepack aktivieren & pnpm vorbereiten
+      - name: Enable Corepack & pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.10.0 --activate
+
+      # 4) pnpm-Store cache (optional, aber beschleunigt Builds)
+      - name: Cache pnpm store
+        uses: actions/cache@v3
         with:
-          version: 10.10.0     # oder Deine pnpm-Version
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies with pnpm
+      # 5) Dependencies installieren
+      - name: Install dependencies
         run: pnpm install
 
+      # 6) Build erzeugen
       - name: Build production bundle
         run: pnpm run build
 
+      # 7) Deploy auf gh-pages-Branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
