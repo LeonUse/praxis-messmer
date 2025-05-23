@@ -10,8 +10,7 @@ import img4 from '../assets/gallery4.jpg';
 import img5 from '../assets/gallery5.jpg';
 import img6 from '../assets/gallery6.jpg';
 const images = [img1, img2, img3, img4, img5, img6];
-const HEADER_HEIGHT = 80; // Höhe der HeaderBar anpassen
-
+const HEADER_HEIGHT = 80; 
 export default function Gallery() {
   const [visible, setVisible] = useState(false);
 
