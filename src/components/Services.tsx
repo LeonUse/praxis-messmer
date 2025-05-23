@@ -20,49 +20,49 @@ const services = [
     key: 'darmsanierung',
     title: 'Darmsanierung',
     icon: faBacteria,
-    description: `Unsere Darmsanierung umfasst eine individuelle Ernährungsberatung sowie den Einsatz von Probiotika und präbiotischen Fasern, um Ihre Darmflora nachhaltig aufzubauen und Beschwerden wie Blähungen oder Unwohlsein zu lindern.`
+    description: ``
   },
   {
     key: 'heilfastenkurse',
     title: 'Heilfastenkurse',
     icon: faPeopleGroup,
-    description: `Erleben Sie unsere geführten Heilfastenkurse in Gruppen: sanftes Fasten unter ärztlicher Begleitung, tägliche Bewegungseinheiten und kulinarische Workshops für den nachhaltigen Gesundheitseffekt.`
+    description: ``
   },
   {
     key: 'sauerstofftherapie',
     title: 'Sauerstofftherapie',
     icon: faLungs,
-    description: `Mit hochdosierter Sauerstofftherapie fördern wir die Zellregeneration und verbessern Ihre Leistungsfähigkeit. Ideal bei chronischen Erkrankungen oder zur Unterstützung der Wundheilung.`
+    description: ``
   },
   {
     key: 'infusionstherapie',
     title: 'Infusionstherapie',
     icon: faSyringe,
-    description: `Unsere Infusionstherapien liefern Vitamine, Mineralstoffe und Spurenelemente direkt in Ihren Blutkreislauf. Perfekt bei Erschöpfung, Immunschwäche oder zur Regeneration nach Sport und Stress.`
+    description: ``
   },
   {
     key: 'bioresonanz',
     title: 'Bio',
     icon: faHeartbeat,
-    description: `Die Biotherapie analysiert und harmonisiert energetische Frequenzen Ihres Körpers. Unterstützend bei Allergien, Hautproblemen oder zur allgemeinen Energiebalance.`
+    description: ``
   },
   {
     key: 'labordiagnostik',
     title: 'Labordiagnostik',
     icon: faVials,
-    description: `Unser umfassendes Labordiagnostik-Portfolio deckt Blut-, Stuhl- und Speichelanalysen ab, um Gesundheitsparameter exakt zu bestimmen und individuelle Therapiekonzepte zu entwickeln.`
+    description: ``
   },
   {
     key: 'seminare',
     title: 'Seminare',
     icon: faChalkboardTeacher,
-    description: `In regelmäßigen Seminaren vermitteln wir Wissen zu Ernährung, Fasten, Stressmanagement und Naturheilverfahren – praxisnah und interaktiv für Ihre Gesundheit.`
+    description: ``
   },
   {
     key: 'kuraufenthalte',
     title: 'Kuraufenthalte',
     icon: faBed,
-    description: `Planen Sie Ihren individuellen Kuraufenthalt mit Unterkunft, Therapieprogramm und Wellnessangeboten. Ganzheitliche Entspannung in naturnaher Umgebung.`
+    description: ``
   }
 ];
 
