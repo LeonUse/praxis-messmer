@@ -1,6 +1,6 @@
 
-import  { useEffect, useRef, useState } from 'react';
-import { Modal, Carousel, Col, Row, Button } from 'antd';
+import { Button, Col, Modal, Row } from 'antd';
+import { useState } from 'react';
 import styles from './Gallery.module.css';
 
 import img1 from '../assets/gallery1.jpg';

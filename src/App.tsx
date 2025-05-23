@@ -1,11 +1,10 @@
-import { Layout, Grid } from 'antd';
-import HeaderBar from './components/HeaderBar';
-import Services from './components/Services';
+import { Grid, Layout } from 'antd';
 import Contact from './components/Contact';
-import Testimonials from './components/Testimonials';
+import HeaderBar from './components/HeaderBar';
 import Home from './components/Home';
 import LifeLine from './components/LifeLine';
-import Gallery from './components/Gallery';
+import Services from './components/Services';
+import Testimonials from './components/Testimonials';
 
 const { Content, Footer } = Layout;
 const { useBreakpoint } = Grid;
