@@ -29,12 +29,6 @@ const services = [
     description: ``
   },
   {
-    key: 'sauerstofftherapie',
-    title: 'Sauerstofftherapie',
-    icon: faLungs,
-    description: ``
-  },
-  {
     key: 'infusionstherapie',
     title: 'Infusionstherapie',
     icon: faSyringe,
