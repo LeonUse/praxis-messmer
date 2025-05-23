@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { Row, Col, Typography, Modal, Button } from 'antd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBacteria,
-  faPeopleGroup,
-  faLungs,
-  faSyringe,
+  faBed,
+  faComments,
+  faFileLines,
   faHeartbeat,
-  faVials,
-  faChalkboardTeacher,
-  faBed
+  faPeopleGroup,
+  faSyringe,
+  faVials
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button, Col, Modal, Row, Typography } from 'antd';
+import { useState } from 'react';
 
 const { Title, Paragraph } = Typography;
 
@@ -18,51 +18,67 @@ const { Title, Paragraph } = Typography;
 const services = [
   {
     key: 'darmsanierung',
-    title: 'Darmsanierung',
+    title: 'Colon-Hydro-Therapie',
     icon: faBacteria,
-    description: ``
+    description: `Die Colon-Hydro-Therapie ist eine Form der Darmspülung.
+Dabei wird der Dickdarm mithilfe eines speziell dafür entwickelten Geräts mit Wasser gespült. Dies erfolgt mit dem Ziel, den Darm zu reinigen und die Darmtätigkeit zu unterstützen.
+`
   },
   {
-    key: 'heilfastenkurse',
-    title: 'Heilfastenkurse',
+    key: 'fastenkurse',
+    title: 'Fastenkurse',
     icon: faPeopleGroup,
-    description: ``
+    description: `Mehrmals im Jahr bieten wir 4x4 Fastenkurse an: An 4 gemeinsamen Abenden vermitteln wir Ihnen Wissen rund um das Thema Fasten.
+Der Kurs wird ergänzt durch frisch gepresste Säfte, Suppen sowie begleitende Nahrungsergänzungsmittel.
+`
   },
   {
-    key: 'sauerstoff',
-    title: 'Sauerstoff',
-    icon: faLungs,
-    description: ``
+    key: 'vegaCheck',
+    title: 'VegaCheck',
+    icon: faFileLines,
+    description: `Der VegaCheck ist ein Verfahren aus der Komplementärmedizin.
+Hierbei werden schmerzfreie Reize auf bestimmte Körperregionen ausgeübt und die darauffolgenden Reaktionen des Körpers erfasst.
+Anwender nutzen den VegaCheck, um Hinweise auf energetische Regulationsstörungen zu erhalten.
+`
   },
   {
     key: 'infusionstherapie',
     title: 'Infusionstherapie',
     icon: faSyringe,
-    description: ``
+    description: `Bei der Infusionstherapie werden Flüssigkeiten wie Elektrolyte oder Nährstoffe intravenös (über die Vene) verabreicht. 
+Diese Anwendungen werden dabei individuell und nach Bedarf zusammengestellt
+`
   },
   {
     key: 'bioresonanz',
-    title: 'Bio',
+    title: 'Bioresonanz',
     icon: faHeartbeat,
-    description: ``
+    description: `Bei der Bioresonanztherapie sollen mithilfe von Elektroden körpereigene Schwingungen erfasst und reguliert werden.
+Es handelt sich hierbei um eine Behandlungsform der Komplementärmedizin, die schulmedizinisch nicht anerkannt ist.
+Es wird von Anwendern zur Unterstützung der Selbstheilungskräfte genutzt
+`
   },
   {
     key: 'labordiagnostik',
     title: 'Labordiagnostik',
     icon: faVials,
-    description: ``
+    description: `Unsere Naturheilpraxis arbeitet mit einem externen Labor zusammen, um fundierte Blutbilder und Laboranalysen erstellen zu lassen.`
   },
   {
-    key: 'seminare',
-    title: 'Seminare',
-    icon: faChalkboardTeacher,
-    description: ``
+    key: 'gesprächstherapie',
+    title: 'Gesprächstherapie',
+    icon: faComments,
+    description: `In der Gesprächstherapie schaffen wir gemeinsam einen geschützten Raum, in dem Ihre Gedanken und Gefühle wertfrei wahrgenommen werden.
+Ziel ist es, innere Klarheit zu gewinnen, neue Perspektiven zu entwickeln und persönliche Ressourcen zu stärken.
+`
   },
   {
     key: 'kuraufenthalte',
     title: 'Kuraufenthalte',
     icon: faBed,
-    description: ``
+    description: `In unserer angrenzenden Kurpension genießen Sie einen sorgenfreien Aufenthalt im malerischen Hegau.
+Die ruhige Umgebung und persönliche Betreuung schaffen optimale Bedingungen für Erholung und Gesundheitsförderung.
+`
   }
 ];
 
