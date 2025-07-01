@@ -72,12 +72,24 @@ export default function Testimonials() {
       style={{
         marginBottom: 80,
         background: '#fff',
-        padding: '50px',
+        padding: '30px',
         borderRadius: 8,
         textAlign: 'center'
       }}
     >
-      <Title level={2} style={{ marginBottom: 40 }}>Erfahrungsberichte</Title>
+      <Title
+  level={2}
+  lang="de"
+  style={{
+    marginBottom: 40,
+    fontSize: '2rem',
+    hyphens: 'auto',
+    overflowWrap: 'break-word',
+    wordBreak: 'normal',
+  }}
+>
+  Erfahrungsberichte
+</Title>
       <Carousel autoplay autoplaySpeed={15000}>
         {reviews.map((r, i) => (
           <Card

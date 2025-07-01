@@ -5,6 +5,9 @@ import Home from './components/Home';
 import LifeLine from './components/LifeLine';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
+import Gallery from './components/Gallery';
+
+
 
 const { Content, Footer } = Layout;
 const { useBreakpoint } = Grid;
@@ -24,7 +27,7 @@ export default function App() {
         <Home />
         <LifeLine />
         <Services />
-        {/*<Gallery />*/}
+        <Gallery />
         <Testimonials />
         <Contact />
       </Content>
